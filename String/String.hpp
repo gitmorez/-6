@@ -32,8 +32,9 @@ public:
     // Перегрузка оператора присваивания
     String& operator=(const String&);
     
+    // !!!!! Не нужен в базов классе по условию лабы
     // Перегрузка оператора сложения
-    String operator+(const String&);
+    // String operator+(const String&);
     
     // Перегрузка оператора вывода
     friend std::ostream& operator<<(std::ostream&, const String&);

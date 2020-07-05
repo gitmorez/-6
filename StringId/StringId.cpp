@@ -60,14 +60,20 @@ StringId::StringId(StringId &str)
         this->value[i] = str.value[i];
 }
 
-void StringId::toUpper()
+StringId StringId::toUpper()
 {
+    StringId upperStr;
+    
+    upperStr.setStringId(this->value);
+    
     for (int i = 0; i < this->length; i++)
     {
         // Инвертируем у всех строчных букв шестой бит
-        if (this->value[i] >= 'a' && this->value[i] <= 'z')
-            this->value[i] = this->value[i] ^ 0x20;
+        if (upperStr.value[i] >= 'a' && upperStr.value[i] <= 'z')
+            upperStr.value[i] = upperStr.value[i] ^ 0x20;
     }
+    
+    return upperStr;
 }
 
 StringId& StringId::operator=(const StringId &other)

@@ -37,7 +37,7 @@ public:
     friend std::ostream& operator<<(std::ostream&, const StringId &);
     
     // Перевод всех символов в верхний регистр
-    void toUpper();
+    StringId toUpper();
     
     
 private:

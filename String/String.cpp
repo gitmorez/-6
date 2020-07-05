@@ -113,30 +113,31 @@ String& String::operator=(const String &other)
     return *this;
 }
 
-String String::operator+(const String &other)
-{
-    String newStr;
-    
-    // Длина новой строки
-    int length = this->length + other.length;
-    newStr.length = length;
-    
-    newStr.value = new char[length + 1];
-    
-    int i = 0;
-    
-    // Записываем в новую строку левый операнд
-    for (; i < this->length; i++)
-        newStr.value[i] = this->value[i];
-    
-    // Дополняем новую строку правым операндом
-    for (int j = 0; j < other.length; j++, i++)
-        newStr.value[i] = other.value[j];
-    
-    newStr.value[length] = '\0';
-    
-    if (DEBUG)
-        std::cout << "Log: Вызов метода перегрузки оператора +" << std::endl;
-    
-    return newStr;
-}
+    // !!!!! Не нужен в базов классе по условию лабы
+//String String::operator+(const String &other)
+//{
+//    String newStr;
+//
+//    // Длина новой строки
+//    int length = this->length + other.length;
+//    newStr.length = length;
+//
+//    newStr.value = new char[length + 1];
+//
+//    int i = 0;
+//
+//    // Записываем в новую строку левый операнд
+//    for (; i < this->length; i++)
+//        newStr.value[i] = this->value[i];
+//
+//    // Дополняем новую строку правым операндом
+//    for (int j = 0; j < other.length; j++, i++)
+//        newStr.value[i] = other.value[j];
+//
+//    newStr.value[length] = '\0';
+//
+//    if (DEBUG)
+//        std::cout << "Log: Вызов метода перегрузки оператора +" << std::endl;
+//
+//    return newStr;
+//}
